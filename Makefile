@@ -1,10 +1,10 @@
 all: asforth
 
 asforth.o: src/asforth.asm src/unistd_64.inc
-	nasm -f elf64 -o obj/asforth.o src/asforth.asm
+	nasm -f elf64 -o asforth.o src/asforth.asm
 
 asforth: asforth.o
-	ld -o asforth obj/asforth.o
+	ld -o asforth asforth.o
 
 run_all_std: asforth
 	cat            \
@@ -23,4 +23,4 @@ run_all_std: asforth
 	- | ./asforth
 
 clean: asforth.o
-	rm obj/asforth.o
+	rm asforth.o
