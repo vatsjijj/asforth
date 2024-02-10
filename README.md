@@ -1,7 +1,7 @@
 # asforth
 Forth, written in 800 lines of assembly.
 
-# Building
+## Building
 You must have NASM and Make installed, and you must be running an x86_64 Linux machine.
 
 Run `make` to build `asforth`, running `asforth` will work, but you haven't told `asforth` about any of the stdlib.
