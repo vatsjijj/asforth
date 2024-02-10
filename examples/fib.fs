@@ -1,0 +1,6 @@
+: FIB ( n1 -- n2 )
+	DUP 1 > IF
+		1- DUP 1- RECURSE SWAP RECURSE +
+	THEN ;
+
+40 FIB . CR
