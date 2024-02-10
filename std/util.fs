@@ -7,11 +7,9 @@
 		2DROP FALSE
 	THEN ;
 
-: DEPTH ( -- n )
-	S0 @ DSP@ - 8- ;
+: DEPTH ( -- n ) S0 @ DSP@ - 8- ;
 
-: ALIGNED ( addr -- addr )
-	7 + 7 INVERT AND ;
+: ALIGNED ( addr -- addr ) 7 + 7 INVERT AND ;
 
 : ALIGN HERE @ ALIGNED HERE ! ;
 
@@ -47,8 +45,7 @@
 	WORD CREATE DOCOL ,
 	' LIT , , ' EXIT , ;
 
-: ALLOT ( n -- addr )
-	HERE @ SWAP HERE +! ;
+: ALLOT ( n -- addr ) HERE @ SWAP HERE +! ;
 
 : CELLS ( n -- n ) 8 * ;
 
@@ -63,12 +60,16 @@
 : TO IMMEDIATE ( n -- )
 	WORD FIND >DFA 8+ STATE @ IF
 		' LIT , , ' ! ,
-	ELSE ! THEN ;
+	ELSE
+		!
+	THEN ;
 
 : +TO IMMEDIATE
 	WORD FIND >DFA 8+ STATE @ IF
 		' LIT , , ' +! ,
-	ELSE +! THEN ;
+	ELSE
+		+!
+	THEN ;
 
 : ID. ( addr -- )
 	8+ DUP C@ F_LENMASK AND BEGIN
@@ -90,8 +91,7 @@
 		THEN @
 	REPEAT CR ;
 
-: FORGET
-	WORD FIND DUP @ LATEST ! HERE ! ;
+: FORGET WORD FIND DUP @ LATEST ! HERE ! ;
 
 : DUMP ( addr len -- )
 	BASE @ -ROT HEX BEGIN
