@@ -1,7 +1,7 @@
 BITS 64
 
-;; nasm -g -F dwarf -f elf64 -o forth.o forth.asm
-;; ld -o forth forth.o
+;; nasm -g -F dwarf -f elf64 -o asforth.o asforth.asm
+;; ld -o asforth asforth.o
 
 %include "src/unistd_64.inc"
 
@@ -714,12 +714,6 @@ defcode "TELL", TELL
 	syscall
 	pop rsi
 	NEXT
-
-;; Exclusively for testing
-defword "FORTYTWO", FORTYTWO
-	dq LIT
-	dq 42
-	dq EXIT
 
 defword "QUIT", QUIT
 	dq R0, RSPSTORE
