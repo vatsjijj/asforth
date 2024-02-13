@@ -1,5 +1,5 @@
 # asforth
-Forth, written in 800 lines of assembly.
+Forth, written in 900 lines of assembly.
 
 ## Building
 You must have NASM and Make installed, and you must be running an x86_64 Linux machine.
