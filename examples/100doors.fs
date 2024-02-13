@@ -1,0 +1,8 @@
+: DOORS ( n -- )
+	1 BEGIN
+		2DUP DUP * >=
+	WHILE
+		DUP DUP * . 1+
+	REPEAT 2DROP ;
+
+100 DOORS CR
