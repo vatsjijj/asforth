@@ -15,3 +15,10 @@ For convenience `rasforth` is provided, to utilize `rasforth` you must have `rlw
 ```
 
 Have fun Forthing!
+
+## TODO
+Allow evaluation and interpretation of files on-the-fly. This would allow for actual file imports rather than having to concatenate every file from the stdlib and feeding it through standard input.
+
+`DOES>` would be a very nice word to have, figure out how to implement this.
+
+Along with `DOES>`, `EVALUATE` would also be extremely nice.
